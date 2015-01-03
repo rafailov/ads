@@ -7,40 +7,49 @@ div {
     margin-top: 10px;
     margin-bottom: 10px;
 }
-
+a:hover{
+    text-decoration:none;
+}
+.headerTitle{
+    margin:0;
+    background: #A9D18E;
+    border: 1px solid #68A978;
+}
+.homepage{
+    margin: 15px ;
+}
 .adContainer {
-    border: 2px solid;
-    border-color: #28E254;
-    background: #61C371;
+    border: 1px solid #68A978;
+    background: #A9D18E;
 }
 
 .adText {
     padding-bottom: 10px;
     padding-top: 10px;
     border: 1px dotted #28E254;
-    background: #A7FFA3;
+    background: #C5E0B4;
 }
 
 .adInfo {
     padding-bottom: 10px;
     padding-top: 10px;
     border: 1px dotted #28E254;
-    background: #A7FFA3;
+    background: #C5E0B4;
     margin: 0px;
 }
 
 
 .panel{
-    background: #A7FFA3;
+    background: #A9D18E;
     margin: 0px;
     margin-top: 0px;
-    border: 0px;
+    border: 1px solid #68A978;
 }
 
 img {
     border-radius: 5px;
-    max-width: 200px;
-    max-height: 200px;
+    width: 200px;
+    height: 220px;
 }
 
 .buttons {
@@ -51,8 +60,16 @@ ul {
     list-style-type: none;
 }
 
-.btn {
+button{
+    border:1px solid #4F8736;
+    border-radius:5px;
+    background:#70AD47;
     width: 100px;
     height: 48px;
     text-align: center;
+    font-weight:bold;
+    color: white;
+}
+button:hover{
+    background:#7FCC53;
 }
