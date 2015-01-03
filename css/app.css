@@ -1,0 +1,58 @@
+body {
+    background: #ddd;
+}
+
+div {
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.adContainer {
+    border: 2px solid;
+    border-color: #28E254;
+    background: #61C371;
+}
+
+.adText {
+    padding-bottom: 10px;
+    padding-top: 10px;
+    border: 1px dotted #28E254;
+    background: #A7FFA3;
+}
+
+.adInfo {
+    padding-bottom: 10px;
+    padding-top: 10px;
+    border: 1px dotted #28E254;
+    background: #A7FFA3;
+    margin: 0px;
+}
+
+
+.panel{
+    background: #A7FFA3;
+    margin: 0px;
+    margin-top: 0px;
+    border: 0px;
+}
+
+img {
+    border-radius: 5px;
+    max-width: 200px;
+    max-height: 200px;
+}
+
+.buttons {
+    color: white;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.btn {
+    width: 100px;
+    height: 48px;
+    text-align: center;
+}
