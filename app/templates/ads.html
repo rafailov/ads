@@ -1,115 +1,124 @@
 <div class="row headerTitle">
-	<h3>ADS - Home</h3>
-	</div>
-    <div class="row homepage">
-	    <div class="col-md-2 panel">
-	        <div class="form-group">
-	            <div class="col-lg-12">
-	                <p>To publish a new ad, please login.</p>
-	                <a href="#/login">
-	                    <button id="login">Login</button>
-	                </a>
-	                <br/>
-	                <br/>
-	                <a href="#/register">
-	                    <button id="register">Register</button>
-	                </a>
+	<h3 class="col-md-11">ADS - Home</h3>
+	<span class="col-md-1">Petyr Login</span>
+</div>
+<div class="row homepage">
+    <div class="col-md-2 panel">
+        <div class="form-group">
+            <div class="col-lg-12">
+                <p>To publish a new ad, please login.</p>
+                <a href="#/login">
+                    <button id="login">Login</button>
+                </a>
+                <br/>
+                <br/>
+                <a href="#/register">
+                    <button id="register">Register</button>
+                </a>
 
-	            </div>
-	        </div>
-	    </div>
+            </div>
+        </div>
+    </div>
 
-	    <div class="col-md-7">
-	        <ul>
-	            <li  ng-repeat="ad in data.ads">
-	                <div class="adContainer well">
+    <div class="col-md-7">
+        <ul>
+            <li  ng-repeat="ad in data.ads">
+                <div class="adContainer well">
 
-	                    <div class="row">
-	                        <div class="col-md-6">
-	                            <h4 class="pull-left">
-	                                {{ad.title}}
-	                            </h4>
-	                        </div>
-	                        <div class="col-md-6">
-	                       <span class="pull-right">
-	                           {{ad.date | date: "dd-MMM-yyyy"}}
-	                       </span>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h4 class="pull-left">
+                                {{ad.title}}
+                            </h4>
+                        </div>
+                        <div class="col-md-6">
+                       <span class="pull-right">
+                           {{ad.date | date: "dd-MMM-yyyy"}}
+                       </span>
 
-	                            <br/>
-	                        </div>
-	                    </div>
+                            <br/>
+                        </div>
+                    </div>
 
-	                    <div class="row">
-	                        <div class="col-md-4">
-	                            <img src="" ng-src="{{ad.imageDataUrl || 'images/noImage.png'}}"/>
-	                        </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <img src="" ng-src="{{ad.imageDataUrl || 'images/noImage.png'}}"/>
+                        </div>
 
-	                        <div class="col-md-8">
-	                            <div class="adText">
-	                                {{ad.text}}
-	                            </div>
-	                            <br/>
+                        <div class="col-md-8">
+                            <div class="adText">
+                                {{ad.text}}
+                            </div>
+                            <br/>
 
-	                            <div class="row">
-	                                <div class="col-md-3">
-	                                    <br/> Name
-	                                </div>
-	                                <div class="col-md-9">
-	                                    <div class="adInfo">
-	                                        {{ad.ownerName}}
-	                                    </div>
-	                                </div>
-	                            </div>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <br/> Name
+                                </div>
+                                <div class="col-md-9">
+                                    <div class="adInfo">
+                                        {{ad.ownerName}}
+                                    </div>
+                                </div>
+                            </div>
 
-	                            <div class="row">
-	                                <div class="col-md-3">
-	                                    <br/> E-mail
-	                                </div>
-	                                <div class="col-md-9">
-	                                    <div class="adInfo">
-	                                        {{ad.ownerEmail}}
-	                                    </div>
-	                                </div>
-	                            </div>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <br/> E-mail
+                                </div>
+                                <div class="col-md-9">
+                                    <div class="adInfo">
+                                        {{ad.ownerEmail}}
+                                    </div>
+                                </div>
+                            </div>
 
-	                            <div class="row">
-	                                <div class="col-md-3">
-	                                    <br/> Phone
-	                                </div>
-	                                <div class="col-md-9">
-	                                    <div class="adInfo">
-	                                        {{ad.ownerPhone}}
-	                                    </div>
-	                                </div>
-	                            </div>
-	                        </div>
-	                    </div>
-	                </div>
-	            </li>
-	        </ul>
-	    </div>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <br/> Phone
+                                </div>
+                                <div class="col-md-9">
+                                    <div class="adInfo">
+                                        {{ad.ownerPhone}}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
 
-	    <div class="col-md-3">
+    <div class="col-md-3">
 
-	        <div class="panel panel-primary">
-	            <div >
-	                <h3 class="panel-title">Categories</h3>
-	            </div>
-	            <div  ng-repeat="category in categories">
-	                <span ng-click="setCategoryFilter(category.id)">{{category.name}} </span>
-	            </div>
-	        </div>
-	        <br/>
+        <div class="panel panel-primary">
+            <div >
+                <h3 class="panel-title">Categories</h3>
+            </div>
+            <hr>
+            <div class="filtersRows" ng-class='{selectedCategoty: $index==selectedCat}' ng-click="setCategoryFilter($index)">
+            	<span>All</span>
+            </div>
+            <div class="filtersRows" ng-repeat="category in categories" ng-class='{selectedCategoty: $index==selectedCat}' ng-click="setCategoryFilter($index)">
+                <span  >{{category.name}} </span>
+            </div>
+        </div>
+        <br/>
 
-	        <div class="panel panel-primary">
-	            <div >
-	                <h3 class="panel-title">Towns</h3>
-	            </div>
-	            <div  ng-repeat="town in towns">
-	               <span ng-click="setTownFilter(town.id)">{{town.name}}</span> 
-	            </div>
+        <div class="panel panel-primary">
+            <div >
+                <h3 class="panel-title">Towns</h3>
+            </div>
+            <hr>
+            <div class="filtersRows" ng-class='{selectedCategoty: $index==selectedTown}' ng-click="setTownFilter($index)">
+               <span>All</span> 
+            </div>
+            <div  ng-repeat="town in towns" class="filtersRows" ng-class='{selectedCategoty: $index==selectedTown}' ng-click="setTownFilter($index)">
+               <span>{{town.name}}</span> 
+            </div>
 
-	        </div>
+        </div>
 
-	    </div>
-	</div>
+    </div>
+</div>

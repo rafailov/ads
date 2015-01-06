@@ -73,3 +73,16 @@ button{
 button:hover{
     background:#7FCC53;
 }
+.filtersRows{
+    width: 90%;
+    margin: 0 auto;
+    padding: 4px;
+}
+.filtersRows:hover{
+    cursor: pointer;
+}
+
+.selectedCategoty{ 
+    background: rgb(229, 180, 90);
+    border: 1px solid rgb(174, 138, 103);
+}
