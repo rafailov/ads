@@ -1,6 +1,6 @@
 var app = angular.module('ads', ['ngRoute','ngResource']);
 
-app.config(function($routeProvider){
+app.config(['$routeProvider', function($routeProvider){
 	$routeProvider.when('/login',{
 		templateUrl: 'templates/login.html',
 		controller: 'Login'
@@ -10,8 +10,7 @@ app.config(function($routeProvider){
 		controller: 'Register'
 	})
 	$routeProvider.when('/',{
-		templateUrl: 'templates/ads.html',
-		controller: 'AllAds'
+		templateUrl: 'templates/homePage.html'
 	})
-})
+}])
 

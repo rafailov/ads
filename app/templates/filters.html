@@ -1,0 +1,29 @@
+<div>
+    <div class="panel panel-primary">
+        <div >
+            <h3 class="panel-title">Categories</h3>
+        </div>
+        <hr>
+        <div class="filtersRows" ng-class='{selectedCategoty: $index==selectedCat}' ng-click="setCategoryFilter($index)">
+        	<span>All</span>
+        </div>
+        <div class="filtersRows" ng-repeat="category in categories" ng-class='{selectedCategoty: $index==selectedCat}' ng-click="setCategoryFilter($index)">
+            <span>{{category.name}} </span>
+        </div>
+    </div>
+    <br/>
+
+    <div class="panel panel-primary">
+        <div >
+            <h3 class="panel-title">Towns</h3>
+        </div>
+        <hr>
+        <div class="filtersRows" ng-class='{selectedCategoty: $index==selectedTown}' ng-click="setTownFilter($index)">
+           <span>All</span> 
+        </div>
+        <div  ng-repeat="town in towns" class="filtersRows" ng-class='{selectedCategoty: $index==selectedTown}' ng-click="setTownFilter($index)">
+           <span>{{town.name}}</span> 
+        </div>
+
+    </div>
+</div>

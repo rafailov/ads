@@ -1,4 +1,4 @@
-app.controller('AllAds', function($scope, adsData, $log) {
+app.controller('HomeCtrl', function($scope, adsData, $log) {
 		var startPage = 1;
 		var selectedCategory = null;
 		var selectedTown = null;
@@ -14,13 +14,14 @@ app.controller('AllAds', function($scope, adsData, $log) {
 
 		$scope.setCategoryFilter = function(row) { 
 			$scope.selectedCat = row;
-			selectedCategory = row;
+			selectedCategory = row + 1;
 			loadAds();
+			//$log.warn(selectedCategory);
       	};
 
       	$scope.setTownFilter = function(row){
 			$scope.selectedTown = row;
-			selectedTown = row;
+			selectedTown = row + 1;
 			loadAds();
       	}
 
