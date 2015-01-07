@@ -2,15 +2,15 @@ var app = angular.module('ads', ['ngRoute','ngResource']);
 
 app.config(['$routeProvider', function($routeProvider){
 	$routeProvider.when('/login',{
-		templateUrl: 'templates/login.html',
+		templateUrl: 'templates/loginPage.html',
 		controller: 'Login'
 	})
 	$routeProvider.when('/register',{
-		templateUrl: 'templates/register.html',
-		controller: 'Register'
+		templateUrl: 'templates/registerPage.html'
 	})
 	$routeProvider.when('/',{
 		templateUrl: 'templates/homePage.html'
 	})
+	//$routeProvider.otherwise({redirectTo: '/'})
 }])
 

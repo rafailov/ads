@@ -18,30 +18,7 @@ app.factory('adsData', function ($http,$log) {
 		})
 	}
 
-	function getCategories(success){
-		$http({
-			method: 'GET',
-			url: 'http://softuni-ads.azurewebsites.net/api/categories'
-		}).success(function(data,status,headers,config){
-			success(data);
-		}).error(function(data,status,headers,config){
-			$log.warn(data);
-		})
-	}
-
-	function getTowns(success){
-		$http({
-			method: 'GET',
-			url: 'http://softuni-ads.azurewebsites.net/api/towns'
-		}).success(function(data,status,headers,config){
-			success(data);
-		}).error(function(data,status,headers,config){
-			$log.warn(data);
-		})
-	}
 	return {
-		getAll: getAllAds,
-		getCategories: getCategories,
-		getTowns:getTowns
+		getAll: getAllAds
 	}
 });

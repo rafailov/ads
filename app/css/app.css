@@ -1,7 +1,10 @@
 body {
     background: #ddd;
 }
-
+input, select{
+    border-radius: 3px;
+    padding: 3px 7px;
+}
 div {
     text-align: center;
     margin-top: 10px;

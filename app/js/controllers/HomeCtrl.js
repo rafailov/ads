@@ -1,16 +1,16 @@
-app.controller('HomeCtrl', function($scope, adsData, $log) {
+app.controller('HomeCtrl',['$scope','adsData','townsData','categoryData','$log', function($scope, adsData,townsData,categoryData, $log) {
 		var startPage = 1;
 		var selectedCategory = null;
 		var selectedTown = null;
 
 		loadAds();
 		function loadAds(){
-			adsData.getAll(function(resp){$scope.data = resp;}, startPage, selectedCategory,selectedTown);
+			adsData.getAll(function(data){$scope.data = data;}, startPage, selectedCategory,selectedTown);
 		}
 
-		adsData.getCategories(function(resp){$scope.categories = resp;});
+		categoryData.getCategories(function(data){$scope.categories = data;});
 
-		adsData.getTowns(function(resp){$scope.towns = resp;});
+		townsData.getTowns(function(data){$scope.towns = data;});
 
 		$scope.setCategoryFilter = function(row) { 
 			$scope.selectedCat = row;
@@ -25,4 +25,4 @@ app.controller('HomeCtrl', function($scope, adsData, $log) {
 			loadAds();
       	}
 
-	});
+	}]);
