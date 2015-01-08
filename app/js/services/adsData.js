@@ -1,4 +1,4 @@
-app.factory('adsData', function ($http,$log) {
+app.factory('adsData',['$http', '$log', function ($http,$log) {
 
 	function getAllAds(success, pageNumber, categoryId, townId) {
 		var url = 'http://softuni-ads.azurewebsites.net/api/ads/?pageSize=5&startPage=' + pageNumber;
@@ -21,4 +21,4 @@ app.factory('adsData', function ($http,$log) {
 	return {
 		getAll: getAllAds
 	}
-});
+}]);

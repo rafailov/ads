@@ -3,9 +3,11 @@ app.controller('HomeCtrl',['$scope','adsData','townsData','categoryData','$log',
 		var selectedCategory = null;
 		var selectedTown = null;
 
+		$scope.ready = false;
 		loadAds();
 		function loadAds(){
-			adsData.getAll(function(data){$scope.data = data;}, startPage, selectedCategory,selectedTown);
+			adsData.getAll(function(data){$scope.data = data; $scope.ready = true;}, startPage, selectedCategory,selectedTown);
+
 		}
 
 		categoryData.getCategories(function(data){$scope.categories = data;});

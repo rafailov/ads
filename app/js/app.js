@@ -1,4 +1,4 @@
-var app = angular.module('ads', ['ngRoute','ngResource']);
+var app = angular.module('ads', ['ngRoute','ngResource', 'LocalStorageModule']);
 
 app.config(['$routeProvider', function($routeProvider){
 	$routeProvider.when('/login',{
@@ -12,5 +12,6 @@ app.config(['$routeProvider', function($routeProvider){
 		templateUrl: 'templates/homePage.html'
 	})
 	//$routeProvider.otherwise({redirectTo: '/'})
+
 }])
 
