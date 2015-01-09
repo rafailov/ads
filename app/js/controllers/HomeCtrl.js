@@ -1,13 +1,17 @@
-app.controller('HomeCtrl',['$scope','adsData','townsData','categoryData','$log', function($scope, adsData,townsData,categoryData, $log) {
+app.controller('HomeCtrl',['$scope','adsData','townsData','categoryData', 'authentication', '$log', function($scope, adsData,townsData,categoryData, authentication, $log) {
 		var startPage = 1;
 		var selectedCategory = null;
 		var selectedTown = null;
 
 		$scope.ready = false;
+		$scope.isLoggedIn = false;
 		loadAds();
+
+		if (authentication.getHeaders()) {
+			$scope.isLoggedIn = true;
+		};
 		function loadAds(){
 			adsData.getAll(function(data){$scope.data = data; $scope.ready = true;}, startPage, selectedCategory,selectedTown);
-
 		}
 
 		categoryData.getCategories(function(data){$scope.categories = data;});

@@ -10,10 +10,12 @@ app.factory('authentication', function () {
 
 	function getHeaders(argument){
 		var headers = {};
-		var userData = getUser();
+		var userData = getUserAccess();
 		if (userData) {
 			headers.Authorization = 'Bearer ' + userData.access_token;
-		};
+		}else{
+			return false;
+		}
 		return headers;
 	}
 
@@ -22,7 +24,7 @@ app.factory('authentication', function () {
 	}
 
 	function isAdmin(){
-		var userData = getUser();
+		var userData = getUserAccess();
 		if (userData) {
 			return angular.fromJson(localStorage.user).isAdmin;
 		}

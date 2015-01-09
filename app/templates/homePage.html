@@ -1,9 +1,16 @@
 <div class="row headerTitle">
 	<h3 class="col-md-12">ADS - Home</h3>
+	<span>{{isLoggedIn}}</span>
 </div>
 <div class="row homepage">
-	<div class="col-md-2 panel">
-		<left-public-sidebar></left-public-sidebar>
+	<div class="col-md-2 ">
+		<div class="panel">
+			<left-navi-bar></left-navi-bar>
+		</div>
+
+		<div class="panel">
+			<left-public-sidebar ng-if="!isLoggedIn"></left-public-sidebar>
+		</div>
 	</div>
 	<div class="col-md-7">
 		<public-ads></public-ads>

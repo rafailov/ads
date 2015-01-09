@@ -1,4 +1,4 @@
-app.factory('UserData', ['$http', 'authentication', '$log', function ($http, authentication, $log) {
+app.factory('UserData', ['$http',  '$location', 'authentication', '$log', function ($http, $location, authentication, $log) {
 
 	function registerUser(user){
 		$http({
@@ -8,6 +8,7 @@ app.factory('UserData', ['$http', 'authentication', '$log', function ($http, aut
 		}).success(function(data,status,headers,config){
 
 			authentication.saveUser(angular.toJson(data));
+			$location.path('/');
 
 		}).error(function(data,status,headers,config){
 			$log.warn(data);//TODO
@@ -21,6 +22,7 @@ app.factory('UserData', ['$http', 'authentication', '$log', function ($http, aut
 		}).success(function(data,status,headers,config){
 
 			authentication.saveUser(angular.toJson(data));
+			$location.path('/');
 			
 		}).error(function(data,status,headers,config){
 			$log.warn(data);//TODO
