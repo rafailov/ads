@@ -1,7 +1,8 @@
 <div>
+    
     <img src="images/loading.gif" ng-hide="ready" alt="">
     <ul>
-        <li  ng-repeat="ad in data.ads" ng-cloak>
+        <li  ng-repeat="ad in adsData.ads" ng-cloak>
             <div class="adContainer well">
 
                 <div class="row">
@@ -59,6 +60,7 @@
                 </div>
             </div>
         </li>
-</ul>
+    </ul>
+    <pagination ng-model="currentPage" page="adsData.startPage" total-items="adsData.numItems" ng-change="pageChanged(currentPage)" items-per-page="pageSize"></pagination>
 </div>
 

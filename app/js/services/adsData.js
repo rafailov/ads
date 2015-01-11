@@ -1,7 +1,7 @@
-app.factory('adsData',['$http', '$log', function ($http,$log) {
+app.factory('adsData',['$http', 'baseServiceUrl', '$log', function ($http, baseServiceUrl, $log) {
 
-	function getAllAds(success, pageNumber, categoryId, townId) {
-		var url = 'http://softuni-ads.azurewebsites.net/api/ads/?pageSize=5&startPage=' + pageNumber;
+	function getAllAds(pageNumber, categoryId, townId, success) {
+		var url = baseServiceUrl + 'ads/?pageSize=5&startPage=' + pageNumber;
 		if (categoryId) {
 			url += '&CategoryId='+ categoryId;
 		};

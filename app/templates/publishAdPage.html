@@ -1,0 +1,20 @@
+<div class="row headerTitle">
+	<div class="col-md-3"></div>
+	<h3 class="col-md-6">ADS - Publish New Ad</h3>
+	<span class="pull-right col-md-3">{{isLoggedIn}}</span>
+</div>
+<div class="row homepage">
+	<div class="col-md-2 ">
+		<div class="panel">
+			<left-navi-bar></left-navi-bar>
+		</div>
+
+		<div class="panel">
+			<left-public-sidebar ng-if="!isLoggedIn"></left-public-sidebar>
+		</div>
+	</div>
+	<div class="col-md-7">
+		<publish-ads></publish-ads>
+	</div>
+
+</div>

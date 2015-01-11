@@ -1,0 +1,15 @@
+<div class="panel">
+	<h1>Publish New Ad</h1><hr>
+		<div class=" col-md-8">
+			<label for="title" class="col-md-3 control-label">Title:</label>
+			<input type="text" id="title" class="control-label col-md-9" placeholder="Title" required="required" ng-model="ad.title"/><br>
+			<label for="text" class="col-md-3 control-label">Text:</label>
+			<textarea id="text" class="control-label col-md-9"  required="required" ng-model="ad.text"></textarea><br>
+			<label for="image" class="col-md-3 control-label">Image:</label>
+			<input type="file" class="control-label col-md-9"  required="required" ng-model="ad.image"><br>
+
+		</div>
+		<div class="col-md-4">
+			<img width="150" ng-src="ad.image" src=""/>
+		</div>
+</div>

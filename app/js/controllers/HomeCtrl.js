@@ -1,17 +1,27 @@
 app.controller('HomeCtrl',['$scope','adsData','townsData','categoryData', 'authentication', '$log', function($scope, adsData,townsData,categoryData, authentication, $log) {
-		var startPage = 1;
+
 		var selectedCategory = null;
 		var selectedTown = null;
 
+		loadAds();
+
+		$scope.currentPage = 1;
+		$scope.startPage = 1;
+		$scope.pageSize = 5;
 		$scope.ready = false;
 		$scope.isLoggedIn = false;
-		loadAds();
+		$scope.pageChanged = function (clickedPage) {
+			loadAds(clickedPage);
+		}
 
 		if (authentication.getHeaders()) {
 			$scope.isLoggedIn = true;
 		};
-		function loadAds(){
-			adsData.getAll(function(data){$scope.data = data; $scope.ready = true;}, startPage, selectedCategory,selectedTown);
+		function loadAds(startPage){
+			adsData.getAll(startPage || 1, selectedCategory,selectedTown, function(data){
+				$scope.adsData = data; 
+				$scope.ready = true;
+			});
 		}
 
 		categoryData.getCategories(function(data){$scope.categories = data;});
@@ -22,7 +32,6 @@ app.controller('HomeCtrl',['$scope','adsData','townsData','categoryData', 'authe
 			$scope.selectedCat = row;
 			selectedCategory = row + 1;
 			loadAds();
-			//$log.warn(selectedCategory);
       	};
 
       	$scope.setTownFilter = function(row){

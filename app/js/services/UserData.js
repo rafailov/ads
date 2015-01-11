@@ -1,9 +1,9 @@
-app.factory('UserData', ['$http',  '$location', 'authentication', '$log', function ($http, $location, authentication, $log) {
+app.factory('UserData', ['$http',  '$location', 'authentication', 'baseServiceUrl', '$log', function ($http, $location, authentication, baseServiceUrl, $log) {
 
 	function registerUser(user){
 		$http({
 			method: 'POST',
-			url: 'http://softuni-ads.azurewebsites.net/api/user/register',
+			url: baseServiceUrl + 'user/register',
 			data: user
 		}).success(function(data,status,headers,config){
 
@@ -17,7 +17,7 @@ app.factory('UserData', ['$http',  '$location', 'authentication', '$log', functi
 		function loginUser(user){
 		$http({
 			method: 'POST',
-			url: 'http://softuni-ads.azurewebsites.net/api/user/login',
+			url: baseServiceUrl + 'user/login',
 			data: user
 		}).success(function(data,status,headers,config){
 
@@ -31,7 +31,7 @@ app.factory('UserData', ['$http',  '$location', 'authentication', '$log', functi
 		function logoutUser(user){
 		$http({
 			method: 'POST',
-			url: 'http://softuni-ads.azurewebsites.net/api/user/logout',
+			url: baseServiceUrl + 'user/logout',
 			data: user
 		}).success(function(data,status,headers,config){
 
