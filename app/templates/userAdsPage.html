@@ -1,6 +1,6 @@
 <div class="row headerTitle">
 	<div class="col-md-3"></div>
-	<h3 class="col-md-6">ADS - Home</h3>
+	<h3 class="col-md-6">ADS - My Ads</h3>
 	<span class="pull-right col-md-3">{{username}} <a href="#/logout">logout</a></span>
 </div>
 <div class="row homepage">
@@ -10,14 +10,11 @@
 		</div>
 
 		<div class="panel">
-			<left-public-sidebar ng-if="!isLoggedIn"></left-public-sidebar>
+			//TODO filter for myads
 		</div>
 	</div>
 	<div class="col-md-7">
-		<public-ads></public-ads>
-	</div>
-	<div class="col-md-3">
-		<right-filters></right-filters>
+		<user-ads></user-ads>
 	</div>
 
 </div>

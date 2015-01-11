@@ -7,7 +7,8 @@ app.controller('HomeCtrl',['$scope','adsData','townsData','categoryData', 'authe
 
 		$scope.currentPage = 1;
 		$scope.startPage = 1;
-		$scope.pageSize = 5;
+		$scope.pageSize = adsData.returnPageSize();
+		$scope.username = authentication.getUserName();
 		$scope.ready = false;
 		$scope.isLoggedIn = false;
 		$scope.pageChanged = function (clickedPage) {

@@ -4,8 +4,7 @@ app.constant('baseServiceUrl', 'http://softuni-ads.azurewebsites.net/api/');
 
 app.config(['$routeProvider', function($routeProvider){
 	$routeProvider.when('/login',{
-		templateUrl: 'templates/loginPage.html',
-		controller: 'Login'
+		templateUrl: 'templates/loginPage.html'
 	})
 	$routeProvider.when('/register',{
 		templateUrl: 'templates/registerPage.html'
@@ -14,7 +13,7 @@ app.config(['$routeProvider', function($routeProvider){
 		templateUrl: 'templates/homePage.html'
 	})
 	$routeProvider.when('/user/ads',{
-		templateUrl: 'templates/homePage.html'//TODO
+		templateUrl: 'templates/userAdsPage.html'//TODO
 	})
 	$routeProvider.when('/user/ads/publish',{
 		templateUrl: 'templates/publishAdPage.html'
@@ -24,8 +23,6 @@ app.config(['$routeProvider', function($routeProvider){
 	})
 	$routeProvider.otherwise({redirectTo: '/'})
 
-	/*		<a href="#/user/ads">My Ads</a><br/>	
-		<a href="#/user/ads/publish">Publish New Ad</a><br/>
-		<a href="#/user/ads/edit">Edit Profile</a>*/
+
 }])
 

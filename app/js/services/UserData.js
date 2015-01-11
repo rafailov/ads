@@ -36,6 +36,7 @@ app.factory('UserData', ['$http',  '$location', 'authentication', 'baseServiceUr
 		}).success(function(data,status,headers,config){
 
 			authentication.clearHeaders();
+			$location.path('/');
 			
 		}).error(function(data,status,headers,config){
 			$log.warn(data);//TODO

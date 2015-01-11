@@ -19,8 +19,17 @@ app.factory('authentication', function () {
 		return headers;
 	}
 
-	function clearHeaders(){
+	function getUserName() {
+		var userData = getUserAccess();
+		if (userData) {
+			return userData.username;
+		}else{
+			return false;
+		}
+	}
 
+	function clearHeaders(){
+		localStorage.clear();
 	}
 
 	function isAdmin(){
@@ -34,6 +43,7 @@ app.factory('authentication', function () {
 		getUser: getUserAccess,
 		getHeaders:getHeaders,
 		clearHeaders:clearHeaders,
-		isAdmin:isAdmin
+		isAdmin:isAdmin,
+		getUserName:getUserName
 	}
 })
