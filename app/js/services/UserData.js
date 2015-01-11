@@ -28,7 +28,8 @@ app.factory('UserData', ['$http',  '$location', 'authentication', 'baseServiceUr
 			$log.warn(data);//TODO
 		})
 	}
-		function logoutUser(user){
+
+	function logoutUser(user){
 		$http({
 			method: 'POST',
 			url: baseServiceUrl + 'user/logout',
@@ -42,9 +43,56 @@ app.factory('UserData', ['$http',  '$location', 'authentication', 'baseServiceUr
 			$log.warn(data);//TODO
 		})
 	}
+	function getUserProfile (success) {
+		$http({
+			method: 'GET',
+			headers: authentication.getHeaders(),
+			url: baseServiceUrl + 'user/profile'
+		}).success(function(data,status,headers,config){
+
+			success(data);
+			
+		}).error(function(data,status,headers,config){
+			$log.warn(data);//TODO
+		})
+	}
+	function updateUserProfile (name, email, phoneNumber, townId) {
+		$http({
+			method: 'PUT',
+			headers: authentication.getHeaders(),
+			url: baseServiceUrl + 'user/profile',
+			data: {'name': name, 'email': email, 'phoneNumber': phoneNumber, 'townId': townId, }
+		}).success(function(data,status,headers,config){
+
+			alert("Your profile was edit successful");
+			$location.path('/');
+			
+		}).error(function(data,status,headers,config){
+			$log.warn(data);//TODO
+		})
+	}
+
+	function changePassword (oldPassword, newPassword, confirmPassword) {
+		$http({
+			method: 'DELETE',
+			headers: authentication.getHeaders(),
+			url: baseServiceUrl + 'user/changePassword',
+			data: {'oldPassword': oldPassword, 'newPassword': newPassword, 'confirmPassword': confirmPassword }
+		}).success(function(data,status,headers,config){
+
+			alert("Your password was edit successful");
+			$location.path('/');
+			
+		}).error(function(data,status,headers,config){
+			$log.warn(data);//TODO
+		})
+	}
 	return {
 		registerUser:registerUser,
 		loginUser:loginUser,
+		getUserProfile:getUserProfile,
+		updateUserProfile:updateUserProfile,
+		changePassword:changePassword,
 		logoutUser:logoutUser
 	}
 }])

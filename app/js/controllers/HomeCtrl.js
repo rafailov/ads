@@ -3,6 +3,7 @@ app.controller('HomeCtrl',['$scope','adsData','townsData','categoryData', 'authe
 		var selectedCategory = null;
 		var selectedTown = null;
 
+
 		loadAds();
 
 		$scope.currentPage = 1;
@@ -14,10 +15,10 @@ app.controller('HomeCtrl',['$scope','adsData','townsData','categoryData', 'authe
 		$scope.pageChanged = function (clickedPage) {
 			loadAds(clickedPage);
 		}
-
 		if (authentication.getHeaders()) {
 			$scope.isLoggedIn = true;
-		};
+		}
+
 		function loadAds(startPage){
 			adsData.getAll(startPage || 1, selectedCategory,selectedTown, function(data){
 				$scope.adsData = data; 
