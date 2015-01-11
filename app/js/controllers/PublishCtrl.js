@@ -9,7 +9,8 @@ app.controller('PublishCtrl',['$scope', 'UserData', 'adsData', 'categoryData', '
 
 	$scope.publishAd = function(ad) {
 		adsData.piblishNewAd(ad, function(data) {
-			//TODO
+			alert('obqvata beshe publicuvana uspeshno');
+			$location.path('/');
 		})
 	}
 }]);

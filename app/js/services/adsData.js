@@ -32,7 +32,6 @@ app.factory('adsData',['$http', 'baseServiceUrl', 'authentication', '$log', func
 			success(data);
 		}).error(function(data,status,headers,config){
 			$log.warn(data);
-			console.log('nestaa');
 		})
 	}
 
@@ -52,6 +51,7 @@ app.factory('adsData',['$http', 'baseServiceUrl', 'authentication', '$log', func
 	return {
 		getAll: getAllAds,
 		piblishNewAd:piblishNewAd,
-		returnPageSize : returnPageSize 
+		getUserAds:getUserAds,
+		returnPageSize : returnPageSize
 	}
 }]);
